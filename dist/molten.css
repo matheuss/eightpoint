@@ -14,3 +14,36 @@
   Molten is a modern CSS reset built for modern browsers. Also built to coincide with Magma, a CSS framework.
 
 */
+
+
+
+
+/* Start Molten Codebase */
+
+
+/*
+  Use `border-box` within the `box-sizing` property to incorporate padding within the width/height of an element.
+  ----
+
+  credit: http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+*/
+
+html { box-sizing: border-box; }
+
+*,
+*:before,
+*:after { box-sizing: inherit; }
+
+
+
+/*
+  - Remove default margin commonly applied to the `body` tag.
+  - Set body font to commonly used fallback fonts.
+  - Set font size to 10px(62.5% of 16px) for easy rem/em calculations.
+*/
+
+body {
+  margin: 0;
+  font-family: helvetica, sans-serif;
+  font-size: 62.5%;
+}
