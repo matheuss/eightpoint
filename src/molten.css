@@ -25,7 +25,9 @@
   Use `border-box` within the `box-sizing` property to incorporate padding within the width/height of an element.
   ----
 
-  credit: http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+  credit:
+    http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+    https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
 */
 
 html { box-sizing: border-box; }
@@ -39,11 +41,9 @@ html { box-sizing: border-box; }
 /*
   - Remove default margin commonly applied to the `body` tag.
   - Set body font to commonly used fallback fonts.
-  - Set font size to 10px(62.5% of 16px) for easy rem/em calculations.
 */
 
 body {
   margin: 0;
   font-family: helvetica, sans-serif;
-  font-size: 62.5%;
 }
