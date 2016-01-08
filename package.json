@@ -1,5 +1,5 @@
 {
-  "name": "molten",
+  "name": "molten.css",
   "version": "1.0.0",
   "description": "A modern CSS reset for modern browsers",
   "main": "gulpfile.babel.js",
