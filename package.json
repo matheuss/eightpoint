@@ -11,15 +11,16 @@
     "css-mqpacker": "^4.0.0",
     "cssnano": "^3.4.0",
     "del": "^2.2.0",
-    "gulp": "^4.0.0-alpha.2",
+    "gulp": "gulpjs/gulp#4.0",
     "gulp-postcss": "^6.0.1",
     "gulp-rename": "^1.2.2",
     "postcss-cssnext": "^2.3.0",
+    "postcss-reporter": "^1.3.0",
     "postcss-simple-vars": "^1.2.0",
     "stylelint": "^3.2.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "gulp lintStyles"
   },
   "repository": {
     "type": "git",
