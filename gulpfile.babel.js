@@ -9,6 +9,7 @@ import mqpacker from 'css-mqpacker';
 import minify from 'cssnano';
 import simpleVars from 'postcss-simple-vars';
 import rename from 'gulp-rename';
+import comments from 'postcss-optional-comments';
 
 // Directories
 const SRC_DIR = 'src';
@@ -37,7 +38,8 @@ export const css = () => src([CSS_GLOB, CSS_PARTIALS], { base: SRC_DIR })
     .pipe(postcss([
       autoprefixer,
       cssnext,
-      simpleVars
+      simpleVars,
+      comments
     ]))
     .pipe(dest(BUILD_DIR))
     .pipe(postcss([minify]))

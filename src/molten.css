@@ -21,16 +21,29 @@
 /* Start Molten Codebase */
 
 
+$font-size-root: 16px;
+$font-size-base: 1em;
+
+
+
+
+
+
 /*
-  Use `border-box` within the `box-sizing` property to incorporate padding within the width/height of an element.
+  - Use `border-box` within the `box-sizing` property to incorporate padding within the width/height of an element.
+  - Set font-size to 16px as a root to ensure all browsers are the same.
   ----
 
-  credit:
+  `border-box` credit:
     http://www.paulirish.com/2012/box-sizing-border-box-ftw/
     https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+
 */
 
-html { box-sizing: border-box; }
+html {
+  box-sizing: border-box;
+  font-size: $font-size-root;
+}
 
 *,
 *::before,
@@ -41,9 +54,11 @@ html { box-sizing: border-box; }
 /*
   - Remove default margin commonly applied to the `body` tag.
   - Set body font to commonly used fallback fonts.
+  - Set body font-size to root font-size to ensure continuity.
 */
 
 body {
   margin: 0;
   font-family: helvetica, sans-serif;
+  font-size: $font-size-base;
 }

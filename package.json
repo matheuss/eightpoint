@@ -17,7 +17,8 @@
     "postcss-cssnext": "^2.3.0",
     "postcss-reporter": "^1.3.0",
     "postcss-simple-vars": "^1.2.0",
-    "stylelint": "^3.2.1"
+    "stylelint": "^3.2.1",
+    "postcss-optional-comments": "CodeTheory/postcss-optional-comments"
   },
   "scripts": {
     "test": "gulp lintStyles"
