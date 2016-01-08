@@ -33,8 +33,7 @@ export const lintStyles = () => src(CSS_GLOB)
   ]));
 
 // Build CSS files
-export const css = () => {
-  src([CSS_GLOB, CSS_PARTIALS], { base: SRC_DIR })
+export const css = () => src([CSS_GLOB, CSS_PARTIALS], { base: SRC_DIR })
     .pipe(postcss([
       autoprefixer,
       cssnext,
@@ -44,7 +43,6 @@ export const css = () => {
     .pipe(postcss([minify]))
     .pipe(rename({suffix: '.min'}))
     .pipe(dest(BUILD_DIR));
-}
 
 
 
