@@ -2,10 +2,6 @@ machine:
   node:
     version: 4.1.0
 
-test:
-  pre:
-    - gulp styleLint
-
 dependencies:
   post:
     - npm install -g gulp-cli
