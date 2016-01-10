@@ -15,10 +15,10 @@
     "gulp-postcss": "^6.0.1",
     "gulp-rename": "^1.2.2",
     "postcss-cssnext": "^2.3.0",
+    "postcss-optional-comments": "^1.0.0",
     "postcss-reporter": "^1.3.0",
     "postcss-simple-vars": "^1.2.0",
-    "stylelint": "^3.2.1",
-    "postcss-optional-comments": "CodeTheory/postcss-optional-comments"
+    "stylelint": "^3.2.1"
   },
   "scripts": {
     "test": "gulp lintStyles"

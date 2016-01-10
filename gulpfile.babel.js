@@ -36,10 +36,10 @@ export const lintStyles = () => src(CSS_GLOB)
 // Build CSS files
 export const css = () => src([CSS_GLOB, CSS_PARTIALS], { base: SRC_DIR })
     .pipe(postcss([
+      comments(),
       autoprefixer,
       cssnext,
-      simpleVars,
-      comments
+      simpleVars
     ]))
     .pipe(dest(BUILD_DIR))
     .pipe(postcss([minify]))
