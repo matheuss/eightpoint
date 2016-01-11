@@ -10,6 +10,7 @@ import minify from 'cssnano';
 import simpleVars from 'postcss-simple-vars';
 import rename from 'gulp-rename';
 import comments from 'postcss-optional-comments';
+import conditionals from 'postcss-conditionals';
 
 // Directories
 const SRC_DIR = 'src';
@@ -36,10 +37,11 @@ export const lintStyles = () => src(CSS_GLOB)
 // Build CSS files
 export const css = () => src([CSS_GLOB, CSS_PARTIALS], { base: SRC_DIR })
     .pipe(postcss([
-      comments(),
+      comments,
+      simpleVars,
+      conditionals,
       autoprefixer,
-      cssnext,
-      simpleVars
+      cssnext
     ]))
     .pipe(dest(BUILD_DIR))
     .pipe(postcss([minify]))

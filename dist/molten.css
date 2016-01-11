@@ -26,6 +26,7 @@ html, body, div,  span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, p
   padding: 0;
   border: 0;
   outline: 0;
+  font-size: 16px;
   font-size: 1rem;
   background: transparent;
 }
@@ -61,6 +62,7 @@ html {
 
 body {
   font-family: helvetica, sans-serif;
+  font-size: 16px;
   font-size: 1rem;
   line-height: 1;
 }
@@ -77,10 +79,13 @@ a { text-decoration: none; }
 
 /*
   - Set margin-bottom of headings to be half the font-size of the global standard font-size for general typographical styling
+  - Remove headings font-weight by default
 */
 
 h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 8px;
   margin-bottom: .5rem;
+  font-weight: normal;
 }
 
 

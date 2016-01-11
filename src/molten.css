@@ -94,10 +94,12 @@ a { text-decoration: none; }
 
 /*
   - Set margin-bottom of headings to be half the font-size of the global standard font-size for general typographical styling
+  - Remove headings font-weight by default
 */
 
 h1, h2, h3, h4, h5, h6 {
   margin-bottom: $heading-margin-bottom;
+  font-weight: normal;
 }
 
 
