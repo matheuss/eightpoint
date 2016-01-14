@@ -18,7 +18,10 @@
 
 
 /*
-  - Initial margin resets
+  - Initial resets of mostly all elements
+  ---
+
+  Note: Not all of the elements listed here contain the properties listed by default but it's entirely possible for someone to add their own stylesheet to be used on every site so it's a good idea to reset all elements just incase so your pages look exactly how you intended them to be.
 */
 
 html, body, div,  span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, header, footer, section, article, nav, canvas, aside, figcaption, figure, hgroup, menuitem, summary, time, mark, audio, video {
@@ -58,13 +61,16 @@ html {
   - Set body font to commonly used fallback fonts.
   - Set body font-size to root font-size to ensure continuity.
   - Reset line-height
+  - Use common font smoothing rules
 */
 
 body {
-  font-family: helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   font-size: 1rem;
   line-height: 1;
+  -webkit-font-smoothing: antialised;
+  -moz-osx-font-smoothing: grayscale
 }
 
 
