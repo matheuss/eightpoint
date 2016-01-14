@@ -18,40 +18,26 @@
 
 
 
-  Start Molten Codebase!
-  ----------------------
-
+Start Molten Codebase!
+----------------------
 
 
 Configurables:
 ----
 
-Rule:    Font-smoothing:
-Default: true.
-Options: [true, false]
-Why?:    Font-smoothing is a common technique for smooth text across platforms.
-*/
+Rule: Font-smoothing: */
 $font-smoothing: true;
-
 /*!
-Rule:    Default font fallbacks
-Default: Arial, Helvetica, sans-serif
-Options: (options here are suggestions and can be custom)
-  - Arial, Helvetica, sans-serif
-  - Georgia, serif
-  - "Lucida Console", Monaco, monospace */
+Rule: Default font fallbacks */
 $font-fallback: Arial, Helvetica, sans-serif;
-
 /*!
-/*!
-
-
-Molten Variables
-----
-
-Font Variables */
+Rule: Root font-size */
 $font-size-root: 16px;
+/*!
+Rule: base font-size */
 $font-size-base: 1rem;
+/*!
+Rule: Heading Margin Bottom */
 $heading-margin-bottom: .5rem;
 
 
