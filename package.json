@@ -1,5 +1,5 @@
 {
-  "name": "molten.css",
+  "name": "core.css",
   "version": "1.0.0",
   "description": "A modern CSS reset for modern browsers",
   "main": "gulpfile.babel.js",
@@ -26,7 +26,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wulkano/molten.git"
+    "url": "git+https://github.com/wulkano/core.git"
   },
   "keywords": [
     "css",
@@ -37,7 +37,7 @@
   "author": "Timothy (@codetheory)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/wulkano/molten/issues"
+    "url": "https://github.com/wulkano/core/issues"
   },
-  "homepage": "https://github.com/wulkano/molten#readme"
+  "homepage": "https://github.com/wulkano/core#readme"
 }
