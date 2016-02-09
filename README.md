@@ -1,2 +1,2 @@
-# Core <a href="https://circleci.com/gh/wulkano/core" rel="Core CircleCI Project">![Core CircleCI Project](https://img.shields.io/circleci/project/wulkano/core.svg)</a>
-Core is a futuristic CSS reset for modern browsers.
+# Clear <a href="https://circleci.com/gh/wulkano/clear" rel="Clear CircleCI Project">![Clear CircleCI Project](https://img.shields.io/circleci/project/wulkano/clear.svg)</a>
+Clear is a futuristic CSS reset for modern browsers.

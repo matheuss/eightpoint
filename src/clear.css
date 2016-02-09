@@ -14,6 +14,31 @@
   Core is a modern CSS reset built for modern browsers. Also built to coincide with Magma, a CSS framework.
 
 */
+/*!
+
+
+
+Start Core Codebase!
+----------------------
+
+
+Configurables:
+----
+
+Rule: Font-smoothing: */
+$font-smoothing: true;
+/*!
+Rule: Default font fallbacks */
+$font-fallback: Arial, Helvetica, sans-serif;
+/*!
+Rule: Root font-size */
+$font-size-root: 16px;
+/*!
+Rule: base font-size */
+$font-size-base: 1.6rem;
+/*!
+Rule: Heading Margin Bottom */
+$heading-margin-bottom: .5rem;
 
 
 
@@ -29,8 +54,6 @@ html, body, div,  span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, p
   padding: 0;
   border: 0;
   outline: 0;
-  font-size: 16px;
-  font-size: 1rem;
   background: transparent;
 }
 
@@ -48,12 +71,13 @@ html, body, div,  span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, p
 
 html {
   box-sizing: border-box;
-  font-size: 16px;
+  font-size: $font-size-root;
+  font-size: 62.5%;
 }
 
 *,
-*:before,
-*:after { box-sizing: inherit; }
+*::before,
+*::after { box-sizing: inherit; }
 
 
 
@@ -65,12 +89,14 @@ html {
 */
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  font-size: 1rem;
+  font-family: $font-fallback;
+  font-size: $font-size-base;
   line-height: 1;
+  /*! Font smoothing: */
+  @if font-smoothing {
   -webkit-font-smoothing: antialised;
-  -moz-osx-font-smoothing: grayscale
+  -moz-osx-font-smoothing: grayscale;
+  }
 }
 
 
@@ -89,8 +115,7 @@ a { text-decoration: none; }
 */
 
 h1, h2, h3, h4, h5, h6 {
-  margin-bottom: 8px;
-  margin-bottom: .5rem;
+  margin-bottom: $heading-margin-bottom;
   font-weight: normal;
 }
 
