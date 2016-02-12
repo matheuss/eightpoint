@@ -1,0 +1,227 @@
+<!doctype HTML>
+<html lang="en">
+  <head>
+    <title>Clear.css tests</title>
+    <link rel="stylesheet" href="dist/clear.css">
+    <style>
+
+      /*
+        Test suite specific styling
+      */
+
+      html, body { height: 100%; }
+      body { counter-reset: test-counter; }
+
+      /* Page header */
+      .page-header {
+        width: 100%;
+        height: 200px;
+        text-align: center;
+        background: #C64727;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Tests container */
+      .tests-container {
+        min-height: 100%;
+        background: white;
+        padding: 70px 0;
+      }
+
+      /* Test */
+      .test {
+        width: 1040px;
+        margin: 0 auto 20px;
+        counter-increment: test-counter;
+      }
+
+      /* Test description/header */
+      .test-description {
+        background: #F1F1F1;
+        padding: 20px 15px 20px 80px;
+        position: relative;
+        min-height: 85px;
+      }
+
+      .test-description:before {
+        content: counter(test-counter, upper-roman);
+        width: 49px;
+        height: 49px;
+        background: #C64727;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        position: absolute;
+        left: 15px;
+        top: 20px;
+      }
+
+      .test-description h2 { color: #C64727; }
+
+      /* Inner test */
+      .inner-test-container {
+        padding: 35px 15px;
+        counter-reset: inner-test-counter;
+      }
+
+      .inner-test {
+        counter-increment: inner-test-counter;
+        margin-bottom: 20px;
+        position: relative;
+        padding-left: 50px;
+      }
+
+      .inner-test:before {
+        content: counter(inner-test-counter);
+        width: 22px;
+        height: 22px;
+        background: #F1F1F1;
+        color: #C1C1C1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        position: absolute;
+        left: 15px;
+        top: 0;
+      }
+
+      .inner-test-container.inner-test-split {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .inner-test-container.inner-test-split .inner-test {
+        flex: 1 1 50%;
+      }
+
+
+
+      /*
+        Styling to aid tests
+      */
+
+      /* Set body background to black to show no margins on body */
+      body { background: black; }
+
+    </style>
+  </head>
+  <body>
+
+    <!-- Test page header -->
+    <header class="page-header">
+      <h1>Clear.css test cases</h1>
+      <h4>Showing off what clear.css resets</h4>
+    </header>
+
+
+    <!-- Tests container -->
+    <section class="tests-container">
+
+      <!-- Test: body margin removed -->
+      <article class="test">
+        <header class="test-description">
+          <h2>Remove <code>margin</code> from <code>body</code></h2>
+          <p>No black background should be visible on this page.</p>
+        </header>
+      </article>
+
+      <!-- Test: Lightened root font colours -->
+      <article class="test">
+        <header class="test-description">
+          <h2>Root font color set to <code>#222222</code></h2>
+          <p>Black is a very harsh color for some screens and so we have lightened it up a bit, but not too much so to notice on good screens.</p>
+        </header>
+
+        <div class="inner-test-container inner-test-split">
+          <div class="inner-test">
+            <h3>Before Clear.css</h3>
+            <p style="color: black;">This text is the default browser color.</p>
+          </div>
+          <div class="inner-test">
+            <h3>After Clear.css</h3>
+            <p>This text is lighter!</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Test: Font smoothing -->
+      <article class="test">
+        <header class="test-description">
+          <h2>Font smoothing</h2>
+          <p>If you're on OSX, iOS, Android etc. You should notice that the fonts are a lot smoother on this page. Thanks to CSS font smoothing.</p>
+        </header>
+      </article>
+
+      <!-- Test: Box-sizing: border-box; -->
+      <article class="test">
+        <header class="test-description">
+          <h2><code>box-sizing: border-box;</code></h2>
+          <p>It's super common to include this line in our styling now, so why not have it as a standard?</p>
+        </header>
+
+        <div class="inner-test-container inner-test-split">
+          <div class="inner-test">
+            <h3>With <code>border-box</code> and 25px padding. Padding is absorbed.</h3>
+            <div style="width: 150px; height: 150px; background: red; padding: 25px;"></div>
+          </div>
+          <div class="inner-test">
+            <h3>With the browser standard <code>content-box</code> and 25px padding. Padding expands the container.</h3>
+            <div style="width: 150px; height: 150px; background: red; padding: 25px; box-sizing: content-box;"></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Test: Font smoothing -->
+      <article class="test">
+        <header class="test-description">
+          <h2>Standardize common font fallbacks</h2>
+          <p>The font on this page is set by clear.css to <code>Arial, Helvetica, sans-serif</code> which are common sans-serif font fallbacks. We used sans-serif because it appears to be the most common font-type on the web to use. Resetting to this common font fallback also prevents developers including the fallbacks in each <code>font-family</code> property they use.</p>
+        </header>
+      </article>
+
+      <!-- Test: Font smoothing -->
+      <article class="test">
+        <header class="test-description">
+          <h2>Set root font-size to 62.5% of the browser standard.</h2>
+          <p>Using <code>font-size: 62.5%</code> on the <code>html</code> element should give us the value of 10px; trusting that browsers have the default value of 16px. By doing this we can make REM/EM calculations easier e.g. <code>20px</code> after this change would be <code>2rem</code></p>
+          <p>Although we default the <code>html</code> element to 10px, we also added a font-size of <code>1.6rem</code> to the body element. This means that you still use the standard font-size of 16px (1.6 * 10 = 16) but with the addition of easier REM calculations and a REM unit font-size on the body as standard. How cool is that?</p>
+        </header>
+
+        <div class="inner-test-container">
+          <div class="inner-test">
+            <h3>REM unit tests</h3>
+            <span style="font-size: 1rem;">1rem = 10px</span>
+            <span style="font-size: 1.6rem;">1.6rem = 16px</span>
+            <span style="font-size: 2rem;">2rem = 20px</span>
+            <span style="font-size: 2.8rem;">2.8rem = 28px</span>
+            <span style="font-size: 3.2rem;">3.2rem = 32px</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Test: Font smoothing -->
+      <article class="test">
+        <header class="test-description">
+          <h2>Minimal link styling</h2>
+          <p>If you're a developer you must of, at one point, styled an anchor element. If you have, you've probably also removed the default link underline so that you may then extend the styling of the link. Clear.css has the underline removed by default to that we developers can have extension styling in our CSS rather than a reset and extension in one block.</p>
+        </header>
+
+        <div class="inner-test-container">
+          <div class="inner-test">
+            <h3>Minimal link!</h3>
+            <a href="#">Link to the top</a>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+  </body>
+</html>
