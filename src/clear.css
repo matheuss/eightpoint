@@ -73,7 +73,6 @@ html, body, div,  span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, p
 
 html {
   box-sizing: border-box;
-  font-size: $font-size-root;
   font-size: 62.5%;
 }
 
@@ -96,8 +95,8 @@ body {
   line-height: $line-height-base;
   /*! Font smoothing: */
   @if $font-smoothing {
-  -webkit-font-smoothing: antialised;
-  -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialised;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
 
