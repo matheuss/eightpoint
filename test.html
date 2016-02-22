@@ -132,25 +132,6 @@
         </header>
       </article>
 
-      <!-- Test: Lightened root font colours -->
-      <article class="test">
-        <header class="test-description">
-          <h2>Root font color set to <code>#222222</code></h2>
-          <p>Black is a very harsh color for some screens and so we have lightened it up a bit, but not too much so to notice on good screens.</p>
-        </header>
-
-        <div class="inner-test-container inner-test-split">
-          <div class="inner-test">
-            <h3>Before Clear.css</h3>
-            <p style="color: black;">This text is the default browser color.</p>
-          </div>
-          <div class="inner-test">
-            <h3>After Clear.css</h3>
-            <p>This text is lighter!</p>
-          </div>
-        </div>
-      </article>
-
       <!-- Test: Font smoothing -->
       <article class="test">
         <header class="test-description">
@@ -178,7 +159,7 @@
         </div>
       </article>
 
-      <!-- Test: Font smoothing -->
+      <!-- Test: Font fallbacks -->
       <article class="test">
         <header class="test-description">
           <h2>Standardize common font fallbacks</h2>
@@ -186,7 +167,7 @@
         </header>
       </article>
 
-      <!-- Test: Font smoothing -->
+      <!-- Test: Rem reset -->
       <article class="test">
         <header class="test-description">
           <h2>Set root font-size to 62.5% of the browser standard.</h2>
@@ -206,7 +187,7 @@
         </div>
       </article>
 
-      <!-- Test: Font smoothing -->
+      <!-- Test: Minimal Link Styling -->
       <article class="test">
         <header class="test-description">
           <h2>Minimal link styling</h2>
@@ -217,6 +198,94 @@
           <div class="inner-test">
             <h3>Minimal link!</h3>
             <a href="#">Link to the top</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Test: Heading Line-heights -->
+      <article class="test">
+        <header class="test-description">
+          <h2>Corrected line-heights and removed margins on headings</h2>
+          <p>It's a pretty common method to remove mragins from headings and apply modify the default line-height to be bolder. So this is why we've implemented it. We've done a bit of research and noticed that a lot of developers set line-height on headings to <code>1.5em</code>, and that's what we have here.</p>
+        </header>
+
+        <div class="inner-test-container inner-test-split">
+          <div class="inner-test">
+            <h3>Heading tests</h3>
+            <h1>Heading 1</h1>
+            <h2>Heading 2</h2>
+            <h3>Heading 3</h3>
+            <h4>Heading 4</h4>
+            <h5>Heading 5</h5>
+            <h6>Heading 6</h6>
+          </div>
+          <div class="inner-test">
+            <h3>Multiline H1</h3>
+            <h1>Heading 1: The quick brown fox jumps over the lazy dog</h1>
+          </div>
+        </div>
+      </article>
+
+      <!-- Test: Sibling paragraph margins -->
+      <article class="test">
+        <header class="test-description">
+          <h2>Add margin to paragraphs with paragraph siblings</h2>
+          <p>Since clear remove margin from everything, we thought it best to reintroduce margin to paragraphs with paragraph siblings so that it doesn't all look like one paragraph. This is an opinionated feature and can be disabled in the clear source code.</p>
+        </header>
+
+        <div class="inner-test-container inner-test-split">
+          <div class="inner-test">
+            <h3>Sole paragraph</h3>
+            <p>This is a lone paragraph with no paragraph siblings. If you inspect this paragraph element, you'll see there is no margin applied.</p>
+          </div>
+          <div class="inner-test">
+            <h3>Paragraph with paragraph siblings</h3>
+            <p>In this test there are multiple paragraphs who are siblings to each other. If you inspect the second paragraph you'll notice the margin-top applied since it is a sibling to another paragraph.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Test: Removal of blockquote/quote default styling -->
+      <article class="test">
+        <header class="test-description">
+          <h2>Remove default styling of blockquotes</h2>
+        </header>
+
+        <div class="inner-test-container inner-test-split">
+          <div class="inner-test">
+            <h3><code>blockquote</code></h3>
+            <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</blockquote>
+          </div>
+          <div class="inner-test">
+            <h3><code>q</code></h3>
+            <q>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</q>
+          </div>
+        </div>
+      </article>
+
+      <!-- Test: Removal of blockquote/quote default styling -->
+      <article class="test">
+        <header class="test-description">
+          <h2>Disable default styling of lists</h2>
+        </header>
+
+        <div class="inner-test-container inner-test-split">
+          <div class="inner-test">
+            <h3>Unordered list</h3>
+            <ul>
+              <li>List Item 1</li>
+              <li>List Item 2</li>
+              <li>List Item 3</li>
+            </ul>
+          </div>
+          <div class="inner-test">
+            <h3>Ordered List</h3>
+            <ol>
+              <li>List Item 1</li>
+              <li>List Item 2</li>
+              <li>List Item 3</li>
+            </ol>
           </div>
         </div>
       </article>

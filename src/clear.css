@@ -37,12 +37,11 @@ $font-size-root: 16px;
 Rule: Base font-size */
 $font-size-base: 1.6rem;
 /*!
-Rule: Root color */
-$color-root: #222222;
+Rule: Base line-height */
+$line-height-base: 1.5em;
 /*!
-Rule: Heading Margin Bottom */
-$heading-margin-bottom: .5rem;
-
+Rule: Add margin to paragraphs with sibling paragraphs */
+$paragraph-sibling-margin: true;
 
 
 /*
@@ -94,13 +93,12 @@ html {
 body {
   font-family: $font-fallback;
   font-size: $font-size-base;
-  line-height: 1;
+  line-height: $line-height-base;
   /*! Font smoothing: */
-  @if font-smoothing {
+  @if $font-smoothing {
   -webkit-font-smoothing: antialised;
   -moz-osx-font-smoothing: grayscale;
   }
-  color: $color-root;
 }
 
 
@@ -114,23 +112,36 @@ a { text-decoration: none; }
 
 
 /*
-  - Set margin-bottom of headings to be half the font-size of the global standard font-size for general typographical styling
   - Remove headings font-weight by default
+  - Setting line-heights instead of margin on headings for continuity and non-opinionated margins.
+
+  Note: Margins on headings are often removed or re-applied with the same value above the heading as below, line-height resolves this issue or can be removed easily aswell.
 */
 
 h1, h2, h3, h4, h5, h6 {
-  margin-bottom: $heading-margin-bottom;
   font-weight: normal;
+  line-height: $line-height-base;
 }
 
 
 
 /*
-  - If a paragraph is accompanied by another paragraph, we apply a margin to the top of the children after the first child.
+  - Remove sizing restrictions from any h1 inside a article, aside, nav or section element.
 */
 
-p + p {
-  margin-top: 1.6rem;
+:-webkit-any(article,aside,nav,section) h1,
+:-webkit-any(article,aside,nav,section) :-webkit-any(article,aside,nav,section) h1 {
+  font-size: 2em;
+}
+
+
+/*
+  - If a paragraph is accompanied by another paragraph, we apply a margin to the top of the children after the first child.
+*/
+@if $paragraph-sibling-margin {
+  p + p {
+    margin-top: 1em;
+  }
 }
 
 
@@ -162,3 +173,19 @@ ol, ul {
   - Remove quotemarks from the blockquote/q elements by default
 */
 blockquote, q { quotes: none; }
+
+
+
+/*
+  - Set elements that use monospace fonts to use fonts that work better with common fallbacks
+  - Fix broken handling of monospace fonts in browsers
+  ----
+
+  `broken monospace` credit:
+    http://code.stephenmorley.org/html-and-css/fixing-browsers-broken-monospace-font-handling/
+*/
+
+pre, code, kbd, samp, tt {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1em;
+}

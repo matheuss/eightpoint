@@ -16,7 +16,6 @@
 */
 
 
-
 /*
   - Initial resets of mostly all elements
   ----
@@ -67,10 +66,9 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   font-size: 1.6rem;
-  line-height: 1;
+  line-height: 1.5em;
   -webkit-font-smoothing: antialised;
-  -moz-osx-font-smoothing: grayscale;
-  color: #222222;
+  -moz-osx-font-smoothing: grayscale
 }
 
 
@@ -84,25 +82,34 @@ a { text-decoration: none; }
 
 
 /*
-  - Set margin-bottom of headings to be half the font-size of the global standard font-size for general typographical styling
   - Remove headings font-weight by default
+  - Setting line-heights instead of margin on headings for continuity and non-opinionated margins.
+
+  Note: Margins on headings are often removed or re-applied with the same value above the heading as below, line-height resolves this issue or can be removed easily aswell.
 */
 
 h1, h2, h3, h4, h5, h6 {
-  margin-bottom: 5px;
-  margin-bottom: .5rem;
   font-weight: normal;
+  line-height: 1.5em;
 }
 
 
 
 /*
-  - If a paragraph is accompanied by another paragraph, we apply a margin to the top of the children after the first child.
+  - Remove sizing restrictions from any h1 inside a article, aside, nav or section element.
 */
 
+:-webkit-any(article,aside,nav,section) h1,
+:-webkit-any(article,aside,nav,section) :-webkit-any(article,aside,nav,section) h1 {
+  font-size: 2em;
+}
+
+
+/*
+  - If a paragraph is accompanied by another paragraph, we apply a margin to the top of the children after the first child.
+*/
 p + p {
-  margin-top: 16px;
-  margin-top: 1.6rem;
+  margin-top: 1em;
 }
 
 
@@ -134,3 +141,19 @@ ol, ul {
   - Remove quotemarks from the blockquote/q elements by default
 */
 blockquote, q { quotes: none; }
+
+
+
+/*
+  - Set elements that use monospace fonts to use fonts that work better with common fallbacks
+  - Fix broken handling of monospace fonts in browsers
+  ----
+
+  `broken monospace` credit:
+    http://code.stephenmorley.org/html-and-css/fixing-browsers-broken-monospace-font-handling/
+*/
+
+pre, code, kbd, samp, tt {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1em;
+}
